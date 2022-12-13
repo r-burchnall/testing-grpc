@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "rpc-server/pkg/helloworldserver/proto";
+
+message GetMessageRequest {
+  string name = 1;
+}
+
+message GetMessageResponse {
+  string name = 1;
+}
+
+service Chatter {
+  rpc GetMessage(GetMessageRequest) returns (GetMessageResponse) {};
+}
